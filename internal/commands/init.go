@@ -56,7 +56,7 @@ func runInit(cmd *cobra.Command, args []string) error {
 	// Create sample content
 	samplePost := `+++
 title = "Welcome to Your New Site"
-date = 2024-01-01
+date = "2024-01-01"
 draft = false
 +++
 

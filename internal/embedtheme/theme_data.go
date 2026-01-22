@@ -116,7 +116,7 @@ body {
 }
 
 /* Header and Navigation */
-header {
+body > header {
     background-color: var(--primary-color);
     color: white;
     padding: 1rem 0;

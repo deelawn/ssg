@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/pelletier/go-toml/v2"
 	"github.com/yuin/goldmark"
@@ -60,9 +61,17 @@ func ParseContent(filePath string) (*Content, error) {
 	if title, ok := frontmatter["title"].(string); ok {
 		content.Title = title
 	}
+
+	// Handle date - can be string, time.Time, or other date types from TOML
 	if date, ok := frontmatter["date"].(string); ok {
 		content.Date = date
+	} else if date, ok := frontmatter["date"].(time.Time); ok {
+		content.Date = date.Format("2006-01-02")
+	} else if frontmatter["date"] != nil {
+		// Handle any other date format by converting to string
+		content.Date = fmt.Sprintf("%v", frontmatter["date"])
 	}
+
 	if author, ok := frontmatter["author"].(string); ok {
 		content.Author = author
 	}

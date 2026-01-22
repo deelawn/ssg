@@ -77,7 +77,7 @@ func generateContent(contentType, name string) string {
 	// Base frontmatter
 	frontmatter := fmt.Sprintf(`+++
 title = "%s"
-date = %s
+date = "%s"
 draft = false
 `, name, now)
 
