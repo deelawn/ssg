@@ -63,6 +63,16 @@ ssg build
 
 Your static site will be generated in the `public/` directory.
 
+### 4. Preview Your Site (Optional)
+
+Start a local web server to preview your site:
+
+```bash
+ssg serve
+```
+
+This will build the site and start a web server at http://localhost:5115
+
 ## Configuration
 
 Edit `config.toml` to customize your site:
@@ -127,6 +137,16 @@ Build the static site:
 ```bash
 ssg build
 ```
+
+### serve
+
+Build and serve the static site locally:
+
+```bash
+ssg serve
+```
+
+Starts a web server at http://localhost:5115 to preview your site. This command automatically builds the site before starting the server.
 
 ## Themes
 
