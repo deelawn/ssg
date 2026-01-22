@@ -1,0 +1,25 @@
+{{define "content"}}
+<div class="home">
+    <h1>{{.Site.Title}}</h1>
+    <p>{{.Site.Description}}</p>
+
+    {{if .Posts}}
+    <section class="posts">
+        <h2>Recent Posts</h2>
+        <ul class="post-list">
+            {{range .Posts}}
+            <li class="post-item">
+                <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+                {{if .Date}}
+                <time datetime="{{.Date}}">{{.Date}}</time>
+                {{end}}
+                {{if .Description}}
+                <p>{{.Description}}</p>
+                {{end}}
+            </li>
+            {{end}}
+        </ul>
+    </section>
+    {{end}}
+</div>
+{{end}}

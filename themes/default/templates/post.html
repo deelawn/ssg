@@ -1,0 +1,16 @@
+{{define "content"}}
+<article class="post">
+    <header class="post-header">
+        <h1>{{.Title}}</h1>
+        {{if .Date}}
+        <time datetime="{{.Date}}">{{.Date}}</time>
+        {{end}}
+        {{if .Author}}
+        <p class="author">By {{.Author}}</p>
+        {{end}}
+    </header>
+    <div class="post-content">
+        {{.Content}}
+    </div>
+</article>
+{{end}}
